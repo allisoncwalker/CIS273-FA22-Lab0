@@ -27,8 +27,6 @@ namespace Uno
 		{
 			return Color.Blue;
 		}
-
-
     }
 }
 
