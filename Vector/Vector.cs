@@ -40,46 +40,51 @@ namespace Vector
 
 		public Vector Subtract(Vector v)
 		{
-			return new Vector();
-		}
 
-		public double Dot(Vector v)
+            Vector result = new Vector(this.X - v.X, this.Y - v.Y);
+
+            return result;
+        }
+
+		public Vector Dot(Vector v)
 		{
-			return 0.0;
-		}
+
+            Vector result = new Vector(this.X * v.X, this.Y * v.Y);
+
+            return result;
+        }
 
 		public double AngleBetween(Vector v)
 		{
 			return 0.0;
-		}
+        }
 
-		public override string ToString()
+        public override string ToString()
 		{
 			// Example
 			// <4.2, 5.39> 
-			return $"<{X}, {Y}>";
+			return $"<{X}, {Y}>"; 
 		}
 
+	public static Vector operator + (Vector a, Vector b)
+	{
+		return a.Add(b);
+	}
 
-		public static Vector operator + (Vector a, Vector b)
-		{
-			return a.Add(b);
-		}
+    public static Vector operator - (Vector a, Vector b)
+    {
+        return a.Subtract(b);
+    }
 
-        public static Vector operator -(Vector a, Vector b)
-        {
-            return a.Subtract(b);
-        }
+    public static Vector operator * (Vector a, Vector b)
+    {
+        return a.Dot(b);
+    }
 
-        public static double operator *(Vector a, Vector b)
-        {
-            return a.Dot(b);
-        }
-
-        public static double AngleBetween(Vector a, Vector b)
-        {
-            return a.AngleBetween(b);
-        }
+    public static double AngleBetween(Vector a, Vector b)
+    {
+        return a.AngleBetween(b);
+    }
 
 
     } 
