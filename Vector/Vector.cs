@@ -56,7 +56,9 @@ namespace Vector
 
 		public double AngleBetween(Vector v)
 		{
-			return 0.0;
+            double radians = Math.Acos(((this.X * v.X) + (this.Y * v.Y)) / (Math.Sqrt(Math.Pow(this.X, 2) + Math.Pow(this.Y, 2)) * (Math.Sqrt(Math.Pow(v.X, 2) + Math.Pow(v.Y, 2)))));
+            double degrees = radians * 180 / Math.PI;
+            return degrees;
         }
 
         public override string ToString()

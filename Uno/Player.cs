@@ -15,7 +15,9 @@ namespace Uno
 
         public bool HasPlayableCard(Card card)
 		{
-			return false;
+			if (Hand == null)
+				return false;
+			return true;
 		}
 
         public Card GetFirstPlayableCard(Card card)
