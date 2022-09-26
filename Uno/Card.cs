@@ -36,16 +36,19 @@ namespace Uno
         // Does card1 play on card2
         public static bool PlaysOn(Card card1, Card card2)
         {
-            if (card2.Color == Color.Wild)
-            {
-                return false;
-            }
-            if (card1.Color == card2.Color || card1.Number == card2.Number || card1.Type == card2.Type)
+            if (
+                card1.Color == Color.Wild ||
+                card2.Color == Color.Wild ||
+                card1.Color == card2.Color ||
+                card1.Number == card2.Number
+                )
             {
                 return true;
             }
-
-            return true;
+            else
+            {
+                return false;
+            }
 
         }
 
